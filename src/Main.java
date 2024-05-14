@@ -9,5 +9,11 @@ public class Main {
         table.put(321, "Yor");
         System.out.println(table.get(100));
         System.out.println(table.get(321));
+        System.out.println(table.getKey("Yor"));
+        table.put(666, "Yuri");
+        System.out.println(table.get(666));
+        table.remove(666);
+        System.out.println(table.get(666));
+        System.out.println(table.contains("Yuri"));
     }
 }
