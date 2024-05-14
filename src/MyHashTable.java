@@ -1,5 +1,5 @@
 public class MyHashTable <K, V>{
-    private HashNode<K, V>[] chainArray;
+    public HashNode<K, V>[] chainArray;
     private int M = 11; // Capacity
     private int size;
     public MyHashTable(){ // Creating constructor
