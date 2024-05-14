@@ -1,5 +1,9 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class BST<K extends Comparable<K>, V> {
     private Node root;
+    private int size;
 
     private class Node {
         private K key;
@@ -12,15 +16,19 @@ public class BST<K extends Comparable<K>, V> {
         }
 
     }
+    public int size() {
+        return size;
+    }
 
     public void put(K key, V value) {
         root = put(root, key, value);
 
     }
     private Node put(Node node, K key, V value) {
-        if (node == null)
+        if (node == null) {
+            size++;
             return new Node(key, value);
-
+        }
         int cmp = key.compareTo(node.key);
         if (cmp < 0) node.left = put(node.left, key, value);
         else if (cmp > 0) node.right = put(node.right, key, value);
@@ -77,6 +85,17 @@ public class BST<K extends Comparable<K>, V> {
     }
 
 
-    //public Iterable<K> iterator() {
-    //}
+    public Iterable<KeyValue<K, V>> iterator() {
+        List<KeyValue<K, V>> list = new ArrayList<>();
+        inorder(root, list);
+        return list;
+    }
+
+    private void inorder(Node node, List<KeyValue<K, V>> list) {
+        if (node != null) {
+            inorder(node.left, list);
+            list.add(new KeyValue<>(node.key, node.val));
+            inorder(node.right, list);
+        }
+    }
 }

@@ -44,6 +44,9 @@ public class Main {
         System.out.println(tree.get(3));
         tree.delete(3);
         System.out.println(tree.get(3));
+        System.out.println("---------------------------------------");
+
+
 
     }
 }
