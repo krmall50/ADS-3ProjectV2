@@ -40,6 +40,10 @@ public class Main {
         tree.put(2, "Loid");
         System.out.println(tree.get(1));
         System.out.println(tree.get(2));
+        tree.put(3, "Yuri");
+        System.out.println(tree.get(3));
+        tree.delete(3);
+        System.out.println(tree.get(3));
 
     }
 }
