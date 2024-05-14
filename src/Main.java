@@ -33,5 +33,13 @@ public class Main {
             }
             System.out.println("bucket " + i + ": " + count + " elements");
         }
+
+        System.out.println("--------------------------------------");
+        BST tree = new BST();
+        tree.put(1, "Anya");
+        tree.put(2, "Loid");
+        System.out.println(tree.get(1));
+        System.out.println(tree.get(2));
+
     }
 }
