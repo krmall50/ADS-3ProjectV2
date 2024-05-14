@@ -7,5 +7,7 @@ public class Main {
         table.put(100, "Anya");
         table.put(123, "Loid");
         table.put(321, "Yor");
+        System.out.println(table.get(100));
+        System.out.println(table.get(321));
     }
 }
